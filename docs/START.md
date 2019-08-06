@@ -2,15 +2,14 @@
 
 kitを便利に使用するなら、ローカル環境にkitDesktopをダウンロードしましょう。
 
-## kitを取得する
-
 kitをあなたのコンピュータのローカル環境に取得するには、2通りの方法があります。
 
 ### [方法1] ZIPからダウンロードして展開
 
-次のファイルをダウンロードし、kitを配置したいディレクトリに展開します。
+次のどちらかのページからkit本体のzipファイルをダウンロードし、kitを配置したいディレクトリに展開します。
 
-#### [Download ZIP](https://github.com/mtsgi/kit/archive/master.zip)
+#### [リリース一覧からダウンロード](https://github.com/mtsgi/kit/releases)
+#### [安定前の最新版をダウンロード](https://github.com/mtsgi/kit/archive/master.zip)
 
 ### [方法2] GitHubリポジトリをクローン
 
@@ -21,9 +20,11 @@ git clone https://github.com/mtsgi/kit.git
 
 ## kitを起動してみる
 
-kitDesktopはクライアントサイドで動作するシステムなので、今kitを配置したディレクトリのパスをブラウザのアドレスバーに入力すれば、kitDesktopは起動します。最初の起動時には「初期設定」が自動的に実行されます。
+kitDesktopはクライアントサイドで動作するシステムなので、今kitを配置したディレクトリ内の`autorun.html`のパスをブラウザのアドレスバーに入力すれば、kitDesktopは起動します。最初の起動時には「初期設定」が自動的に実行されます。
 
-kitがアプリケーションが展開できない場合、以下の対応を試みてください。
+![kitDesktop](images/setup.png)
+
+初期設定はすぐに終わります。kitがアプリケーションが展開できない場合、以下の対応を試みてください。
 
 ## 同一生成元ポリシーへの対応
 
