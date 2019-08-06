@@ -1,10 +1,12 @@
 # kitDesktopとは？
 
-kitDesktopはインストール不要でJavaScript上で完全に動作するデスクトップ環境です。すべてのkitアプリケーションは**HTML**構造に**JavaScript**、それとJavaScriptを用いた**kit apps framework**を用いて記述されていて、呼び出されるとAjaxでロードされます。サーバーサイド技術は用いられていません。
+kitDesktopはインストール不要でJavaScript上で完全に動作するオープンソースのデスクトップ環境です。
+
+すべてのkitアプリケーションは**HTML**構造に**JavaScript**、それとJavaScriptを用いた**kit apps framework**を用いて記述されていて、呼び出されるとAjaxでロードされます。サーバーサイド技術は用いられていません。
 
 ![kitDesktop](images/logo.png)
 
-kitアプリケーションはHTMLと少しのJavaScriptの知識があればすぐに開発することができます。CSSを記述してアプリケーションのスタイルを調整することも可能ですが、kitのスタイルフレームワークである**kitstrap**を使用するともっと簡単にアプリケーションのスタイルやレイアウトを組み立てることができます。
+> kitアプリケーションはHTMLと少しのJavaScriptの知識があればすぐに開発することができます。CSSを記述してアプリケーションのスタイルを調整することも可能ですが、kitのスタイルフレームワークである**kitstrap**を使用するともっと簡単にアプリケーションのスタイルやレイアウトを組み立てることができます。
 
 まずは、[最新安定版](http://kitit.ml/)のkitを体験してみてください。
 
