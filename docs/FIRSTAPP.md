@@ -100,7 +100,7 @@ kitアプリのスクリプトの基本形は次の形です：
 ((_pid) => {
     // "calc"というイベントを設定
     App.event(_pid, "calc", ()=>{
-        // heightとwidthを取得
+        // heightとweightを取得
         let h = App.data(_pid).height;
         let w = App.data(_pid).weight;
         // 数値に変換

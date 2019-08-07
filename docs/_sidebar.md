@@ -1,8 +1,10 @@
-- 導入
+- **導入**
   - [kitDesktopとは？](/)
   - [kitをはじめる](/START)
-- はじめてのkitアプリ
+
+- **はじめてのkitアプリ**
   - [kitアプリのしくみ](/HOW)
   - [はじめてのkitアプリ](/FIRSTAPP)
-- define.json
+
+- **define.json**
   - [定義可能項目の一覧](/DEF)
