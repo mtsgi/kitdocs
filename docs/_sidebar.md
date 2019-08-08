@@ -2,7 +2,7 @@
   - [kitDesktopとは？](/)
   - [kitをはじめる](/START)
 
-- **はじめてのkitアプリ**
+- **kitチュートリアル**
   - [kitアプリのしくみ](/HOW)
   - [はじめてのkitアプリ](/FIRSTAPP)
 
