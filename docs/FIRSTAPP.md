@@ -92,7 +92,7 @@ kitアプリケーションをスクリプトありで作る場合、毎回こ�
 
 実は、ボタンのクリック時のイベントを設定して、`<input>`タグの内容を取得して計算をする処理を書いて…というのは少し面倒ですが、**kit apps framework**(kaf)の機能を使うことでこれらは簡単に実現することができます。
 
-**kaf**を使うことで、JavaScriptコーディングの量を劇的に少なく、あるいはまったくなくすことができます。`default.html`に次のように少し書き加えます。
+**kaf**を使うことで、JavaScriptコーディングの量を劇的に少なく、あるいはまったくなくすことができます(実際に、`welcome`アプリではJavaScriptによるコーディングは1行もありません)。`default.html`に次のように少し書き加えます。
 
 ```default.html
 <input type="text" class="textbox m" placeholder="身長(cm)" kit-bind="height"><br>
