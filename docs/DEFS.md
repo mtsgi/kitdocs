@@ -7,4 +7,4 @@
 |**fullscreen**|false|Boolean|`true`にすると、最小化ボタンと閉じるボタンの中間にボタンが現れ、アプリケーションを最大化できるようになります。|
 |**resize**|false|Boolean|`true`にすると、ウィンドウの端をドラッグすることでウィンドウをリサイズできるようになります。|
 |**darkmode**|false|Boolean|`true`にすると、システム設定でダークモード有効時に自動的にダークテーマが適用されるようになります。|
-|**kaf**|true|Boolean|`false`にすると、kit apps frameworkを使用しません(kafの属性値などを無視します)。|
+|**kaf**|true|Boolean|`false`にすると、そのアプリケーションではkit apps frameworkを使用しません(kafの属性値などを無視します)。|
