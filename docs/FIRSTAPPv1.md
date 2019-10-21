@@ -1,8 +1,8 @@
-# はじめてのkitアプリ
+# はじめてのkitアプリ(kaf v1版)
+
+> この記事は、**kit apps framework v1**ではじめてのkitアプリを作るチュートリアルです。いくつかの変更が施されたkaf v2を実装する**kit 0.2.1以降**では、最新の[kitチュートリアル「はじめてのkitアプリ」](/FIRSTAPP)をご覧ください。
 
 いよいよ、はじめてのkitアプリケーションを作ってみましょう。
-
-> kaf v1でkitチュートリアルを行う場合は[こちら](/FIRSTAPPv1)を参照してください。
 
 簡単な「BMIを計算するアプリケーション」を作ってみましょう。まずは、`/app`以下に`bmi`という名前のディレクトリを作成します。
 
@@ -17,7 +17,7 @@ kitアプリケーションに必須である**define.json**を、アプリケ�
     "id": "bmi",
     "name": "BMI計算",
     "icon": "none",
-    "version": "1.0",
+    "version": "1",
     "author": "authorName",
 
     "support": {
@@ -43,7 +43,7 @@ define.jsonの内容を変更することでアプリの名前やバージョン
 
 ## テンプレートを作る
 
-次に、define.jsonで定義した**default.html**にHTMLでアプリのテンプレート(表示される部分)を作っていきます。
+次に、define.jsonで定義した**default.html**にHTMLでアプリを作っていきます。
 
 > このメインのテンプレートのファイル名は何でもいいのですが、慣習的に**default.html**という名前で作る場合が多いです。
 
@@ -56,11 +56,11 @@ BMIを算出する式は、**体重 ÷ (身長)^2**です。体重と身長を�
 <kit-button class="kit-block m">計算</kit-button>
 ```
 
-2つの`<input>`タグに**[kitstrap](https://mtsgi.github.io/kitstrap)**の`.textbox`クラスを付与し、スタイルを設定します。そして、`<kit-button>`要素を使って計算ボタンを配置しましょう(ブロック要素にするために`.kit-block`クラスを付与します)。
+2つの`<input>`タグに**kitstrap**の`.textbox`クラスを付与し、スタイルを設定します。そして、`<kit-button>`要素を使って計算ボタンを配置しましょう(ブロック要素にするために`.kit-block`クラスを付与します)。
 
 > `.m`クラスは、要素にmarginを付与します。`.p`クラスは要素にpaddingを付与します。詳細は[kitstrapのドキュメント](https://mtsgi.github.io/kitstrap/docs/layouts.html)をご確認ください。
 
-この時点で、アプリケーションを開いてみる(Sightreの「さがす」から「bmi」と入力し、Enterキーを押すと、次のような見た目のアプリが完成しているはずです。
+この時点で、アプリケーションを開いてみる(検索ボックスに「bmi」を入力し、「アプリを起動する」をクリック)と、次のような見た目が完成しているはずです。
 
 ![kitDesktop](images/bmi.png)
 
@@ -82,43 +82,41 @@ app
 
 kitアプリのスクリプトの基本形は次の形です：
 
-```javascript
-((_pid, _app) => {
+```bmi.js
+((_pid) => {
     //ここにスクリプトを記述
-})(pid, app);
+})(pid);
 ```
 
-kitアプリケーションのスクリプトは、毎回このひな形から作り始めましょう。
+kitアプリケーションをスクリプトありで作る場合、毎回このひな形から作り始めましょう。
 
-> これは、アプリのプロセスIDと[_appインスタンス](/_app)を引数に取る**即時関数**です。関数スコープを持ち、`_pid`変数および`_app`インスタンスを使うことでプロセスに対する処理を行うことができます。プロセスIDは、アプリケーションの起動時に割り振られる識別子です。
+> これは、アプリの**プロセスID**を引数に取る**即時関数**です。関数スコープを持ち、`_pid`変数を使うことでプロセスIDを使った処理を行うことができます。プロセスIDは、アプリケーションの起動時に割り振られる識別子で、プロセスを判断し操作するのに重要なものです。
 
-実は、ボタンのクリック時のイベントを設定して、`<input>`タグの内容を取得して計算をする処理を書いて…というのはふつうのJavaScriptで実現しようと思うと少し面倒ですが、**kit apps framework**(kaf)の機能を使うことでこれらは簡単に実現することができます。
+実は、ボタンのクリック時のイベントを設定して、`<input>`タグの内容を取得して計算をする処理を書いて…というのは少し面倒ですが、**kit apps framework**(kaf)の機能を使うことでこれらは簡単に実現することができます。
 
 **kaf**を使うことで、JavaScriptコーディングの量を劇的に少なく、あるいはまったくなくすことができます(実際に、`welcome`アプリではJavaScriptによるコーディングは1行もありません)。`default.html`に次のように少し書き加えます。
 
 ```default.html
-<input type="text" class="textbox m" placeholder="身長(cm)" kit:bind="height"><br>
-<input type="text" class="textbox m" placeholder="体重(kg)" kit:bind="weight">
+<input type="text" class="textbox m" placeholder="身長(cm)" kit-bind="height"><br>
+<input type="text" class="textbox m" placeholder="体重(kg)" kit-bind="weight">
 <kit-button class="kit-block m" kit-e="calc">計算</kit-button>
 ```
 
-2つの`<input>`要素の`kit:bind`属性にそれぞれ`"height"`、`"weight"`という名前(kafデータ名)をつけます。
+2つの`<input>`要素の`kit-bind`属性にそれぞれ`"height"`、`"weight"`という名前をつけます。こうすることで、スクリプトから**App.data()**メソッドを使ってバインドされたデータを取得することができるようになります。
 
-こうすることで、スクリプトから**[_app.data()](/_app.data)**メソッドを使ってバインドされたデータを取得することができるようになります。
-
-また、`<kit-button>`要素に`kit-e`属性を付与し、`"calc"`というイベント名を指定ます。これで、ボタンのクリック時に**calc**というイベントが呼び出されるようになります。
+また、`<kit-button>`要素に`kit-e`属性に`"calc"`というイベント名を指定し、ボタンのクリック時に**calc**というイベントが呼び出されるようにします。
 
 > `kit-e="calc"`という記述は、実は`kit-e="calc click"`の省略形です。イベント名のあとに半角スペースを空けてイベント種類(**event.type**。詳細は[こちらの記事](https://developer.mozilla.org/ja/docs/Web/API/Event/type)を参照)を指定することでイベントの実行条件を定義できるのですが、`click`の場合のみ省略できます。
 
 それができたら、スクリプト側で**calc**というイベントを定義しましょう。あと少しで最初のkitアプリが完成します。
 
 ```bmi.js
-((_pid, _app) => {
+((_pid) => {
     // "calc"というイベントを設定
-    _app.event('calc', ()=>{
+    App.event(_pid, "calc", ()=>{
         // heightとweightを取得
-        let h = _app.data('height');
-        let w = _app.data('weight');
+        let h = App.data(_pid).height;
+        let w = App.data(_pid).weight;
         // 数値に変換
         h = Number(h) / 100;
         w = Number(w);
@@ -128,10 +126,10 @@ kitアプリケーションのスクリプトは、毎回このひな形から�
         // アラート表示
         System.alert(`BMIは${BMI}です。`, `適正体重は${apt}kgです。`);
     });
-})(pid, app);
+})(pid);
 ```
 
-**[_app.event()メソッド](/_app.event)**でイベントを定義します。第1引数に**イベント名**(ここでは`'calc'`)、第2引数に**実行される関数**そのものを記述します。kafのイベントはプロセスごとに管理されるため、他のアプリとのイベント名の重複は気にする必要がありません。
+`App.event()`メソッドでイベントを定義します。第1引数は**プロセスID**(先ほど即時関数の仮引数とした`_pid`を使います)、第2引数は**イベント名**(ここでは`"calc"`)、第3引数に**実行される関数**そのものを記述します。kafのイベントはプロセスごとに管理されるため、他のアプリとのイベント名の重複は気にする必要がありません。
 
 変数`h`と`w`にそれぞれ身長、体重の値を格納します。それを数値に変換し、BMIと適正体重を算出後、システムネイティブの`System.alert()`メソッドを使ってアラートとしてBMIと適正体重を表示するというスクリプトになっています。
 
