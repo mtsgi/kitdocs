@@ -8,7 +8,7 @@ kitDesktopはインストール不要でJavaScript上で完全に動作するオ
 
 > kitアプリケーションはHTMLと少しのJavaScriptの知識があればすぐに開発することができます。CSSを記述してアプリケーションのスタイルを調整することも可能ですが、kitのスタイルフレームワークである**kitstrap**を使用するともっと簡単にアプリケーションのスタイルやレイアウトを組み立てることができます。
 
-まずは、[最新安定版](http://kitit.ml/)のkitを体験してみてください。
+まずは、[最新版(Canary)](https://mtsgi.github.io/kit/)のkitを体験してみてください。
 
 ![kitDesktop](images/desktop.png)
 
