@@ -25,7 +25,7 @@ _app.qs( [selector1, selector2, ..., selectorN] )
 
 このメソッドに関連して、[_app.domメソッド](/_app.dom)があります。`_app.qs`メソッドと同じ構文を用いて静的なNodeListを取得するバージョンです。
 
-> このメソッドは、kaf v2が内部的に[System.qsメソッド](/System.qs)メソッドを呼び出しています。
+> このメソッドは、kafが内部的に[System.qsメソッド](/System.qs)メソッドを呼び出しています。
 
 ## 例
 
