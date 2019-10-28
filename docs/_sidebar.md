@@ -20,10 +20,10 @@
   - [_app.argsオブジェクト](/_app.args)
   - [_app.changeWindowTitleメソッド](/_app.changeWindowTitle)
   - [_app.closeメソッド](/_app.close)
-  - [_app.dメソッド](/_app.d)
+  - [_app.dオブジェクト](/_app.d)
   - [_app.dataメソッド](/_app.data)
   - [_app.domメソッド](/_app.dom)
-  - [_app.eメソッド](/_app.e)
+  - [_app.eオブジェクト](/_app.e)
   - [_app.eventメソッド](/_app.event)
   - [_app.getPathメソッド](/_app.getPath)
   - [_app.infoオブジェクト](/_app.info)
@@ -55,4 +55,5 @@
   - [App.preventCloseメソッド](/App.preventClose)
 
 - **Tips**
+  - [アプリが起動しない](/cors)
   - [ダークモード](/darkmode)
