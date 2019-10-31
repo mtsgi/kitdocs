@@ -63,4 +63,4 @@ _app.ntf( message.user.name, message.content, () => {
 
 アプリ内のオブジェクト名やメソッド名は実在するものではありませんが、_app.eオブジェクトに引数を取るreply()やturnPushing()メソッド、messageオブジェクトにメッセージのトークルーム情報、送信元情報などが含まれているものと仮定しています。
 
-> このメソッドは、kafが内部的に[Notification.pushメソッド](/Notification.push)メソッドを呼び出しています。
+> このメソッドは、kafが内部的に[Notification.push](/Notification.push)メソッドを呼び出しています。
