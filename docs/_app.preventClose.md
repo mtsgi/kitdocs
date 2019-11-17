@@ -21,3 +21,6 @@ _app.preventClose( [bool] )
 ```javascript
 if( _app.d.prop ) _app.preventClose()
 ```
+
+## 対応状況
+- kit 0.2.1(kaf v2)以降

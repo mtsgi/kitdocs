@@ -25,3 +25,6 @@ _app.ntf( 'Hello', content, null, _app.getPath('face.png') )
 ```
 
 アプリケーションディレクトリ内の「face.png」を添付した通知を送信する例です。
+
+## 対応状況
+- kit 0.2.1(kaf v2)以降
