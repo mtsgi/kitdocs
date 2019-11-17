@@ -22,3 +22,6 @@ _app.changeWindowTitle( title )
 ```javascript
 _app.changeWindowTitle('Sure?')
 ```
+
+## 対応状況
+- kit 0.2.1(kaf v2)以降

@@ -41,3 +41,6 @@ let elemCount = _app.qs()[0].childElementCount
 ```
 
 引数なしで`_app.qs`メソッドを呼び出し、テンプレート内の子要素の個数を取得する例です。
+
+## 対応状況
+- kit 0.2.1(kaf v2)以降

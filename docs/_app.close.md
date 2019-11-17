@@ -21,3 +21,6 @@ _app.close()
 ```javascript
 _app.close()
 ```
+
+## 対応状況
+- kit 0.2.1(kaf v2)以降

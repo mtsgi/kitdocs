@@ -21,3 +21,6 @@ _app.kaf()
 ```javascript
 _app.kaf()
 ```
+
+## 対応状況
+- kit 0.2.1(kaf v2)以降
