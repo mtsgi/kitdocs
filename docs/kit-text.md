@@ -12,7 +12,7 @@
 
 ## 例
 
-kitシステムが持つユーザーネームの値を`<span>`要素に表示させる例です。
+kitシステムが持つユーザーネームの値を`<strong>`要素に表示させる例です。
 
 ```html
 <strong kit-text="System.username"></strong>
