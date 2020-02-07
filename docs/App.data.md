@@ -62,4 +62,5 @@ App.data(_pid, 'foo', Math.random())
 このコードは、プロセスID`_pid`の`foo`というデータをランダムな数値に書き換えます。
 
 ## 対応状況
+
 - kit 0.2.0(kaf v1)以降
